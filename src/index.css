@@ -1,0 +1,57 @@
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: white;
+  height: 20px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  text-align: left;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-card h2 {
+  margin-top: 0;
+}
+
+.product-card p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%;
+  }
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
