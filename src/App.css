@@ -13,6 +13,7 @@
   right: 0;
   width: 100%;
   background: lightsteelblue;
+  font-family: monospace;
 }
 
 .navbar h1 {
@@ -134,6 +135,8 @@
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  width: 60%;
+  height: 40%;
 }
 
 .remove-button:hover {
@@ -202,7 +205,7 @@ input[name="username"] {
 }
 
 button {
-  background-color: #007BFF;
+  background-color: #566472;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -213,7 +216,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #6c7681;
 }
 
 p {
@@ -227,4 +230,22 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.addbtn {
+  background-color: #ff5733; 
+  color: #fff; 
+  font-size: 10px; 
+  padding: 20px 20px; 
+  border-radius: 5px; 
+  width: 40%;
+  height: 30%;
+}
+
+.addbtn:hover {
+  background-color: #e64900; 
+}
+
+.addbtn:active {
+  background-color: #cc3d00;
 }

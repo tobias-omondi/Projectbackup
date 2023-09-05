@@ -5,7 +5,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
 
   return (
     <div className="cart">
-      <h2>Cart</h2>
+      <h2>Shop</h2>
       <ul>
         {items.map((item) => (
           <li key={item.id}>

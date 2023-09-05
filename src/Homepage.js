@@ -55,7 +55,8 @@ const Homepage = () => {
                 <p>{product.product_description}</p>
                 <p>Price: ${product.unit_price}</p>
               </div>
-              <button onClick={() => addToCart(product, index)}>Add to Cart</button>
+              <button className='addbtn' onClick={() => addToCart(product, index)}>Add to Cart</button>
+             
             </div>
           ))}
         </div>
