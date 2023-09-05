@@ -33,6 +33,20 @@
   margin: 20px;
 
 }
+.para p {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.parag h3 {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
 
 .homepage{
   margin-top: 70px;
@@ -184,7 +198,7 @@
 
 label {
   font-weight: bold;
-  color: #555;
+  color: #123fd1;
 }
 
 input[type="email"],
@@ -205,7 +219,7 @@ input[name="username"] {
 }
 
 button {
-  background-color: #566472;
+  background-color: #1187b6;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -249,3 +263,4 @@ a:hover {
 .addbtn:active {
   background-color: #cc3d00;
 }
+

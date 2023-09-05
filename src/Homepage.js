@@ -5,38 +5,31 @@ const Homepage = () => {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
 
- 
-  const addToCart = (product, index) => {
-    const newItem = { id: index, name: product.product_name, price: product.unit_price };
+  const addToCart = (product) => {
+    const newItem = { id: product.id, name: product.title, price: product.price };
     const updatedCart = [...cartItems, newItem];
     setCartItems(updatedCart);
 
-    
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
- 
   const removeFromCart = (itemId) => {
     const updatedCart = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCart);
 
-   
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
-  
   useEffect(() => {
-   
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
       setCartItems(JSON.parse(storedCart));
     }
   }, []);
 
- 
   useEffect(() => {
-    
-    fetch('http://ecommerce.muersolutions.com/api/v1/products')
+    // Fetch product data from the API
+    fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);
@@ -44,23 +37,26 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <h1>Welcome to SHOPify</h1>
-        <div className="products">
-          {products.map((product, index) => (
-            <div key={index} className="product-card">
-              <div className='image-container'>
-                <img src={product.product_thumbnail} alt={product.product_name} />
-              </div>
-              <div>
-                <h3>{product.product_name}</h3>
-                <p>{product.product_description}</p>
-                <p>Price: ${product.unit_price}</p>
-              </div>
-              <button className='addbtn' onClick={() => addToCart(product, index)}>Add to Cart</button>
-             
+      <div className="products">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <div className='image-container'>
+              <img src={product.image} alt={product.title} />
             </div>
-          ))}
-        </div>
-        <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+            
+            <div className='parag'>
+              <h3>{product.title}</h3>
+              <div className='para'>
+                <p>{product.description}</p></div>
+              
+              <p>Price: ${product.price}</p>
+            </div>
+           
+            <button className='addbtn' onClick={() => addToCart(product)}>Add to Cart</button>
+          </div>
+        ))}
+      </div>
+      <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
     </div>
   );
 };
